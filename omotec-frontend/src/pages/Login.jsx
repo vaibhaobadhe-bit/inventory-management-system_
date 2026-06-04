@@ -65,12 +65,12 @@ export default function Login({ onLogin }) {
         <div className="relative max-w-lg space-y-8 z-10">
           <div>
             <span className="bg-indigo-700/50 border border-indigo-500/30 text-indigo-300 text-xs uppercase px-3 py-1.5 rounded-full font-bold tracking-wider">
-              Omotec Portal v2.0
+              Resource Portal v2.0
             </span>
           </div>
 
           <div className="space-y-3">
-            <h1 className="text-4xl font-extrabold tracking-tight">OMOTEC Management System</h1>
+            <h1 className="text-4xl font-extrabold tracking-tight">Resource Management Portal</h1>
             <p className="text-indigo-200 text-lg">
               Unified resource platform for inventory control, course training, and audit-safe supply tracking.
             </p>
@@ -113,7 +113,7 @@ export default function Login({ onLogin }) {
 
           <div className="pt-6">
             <p className="text-xs text-indigo-400">
-              © 2026 OMOTEC Management System. Authorized access only.
+              © 2026 Resource Management Portal. Authorized access only.
             </p>
           </div>
         </div>
@@ -234,7 +234,7 @@ export default function Login({ onLogin }) {
           {/* Footnote */}
           <div className="text-center pt-4 lg:hidden">
             <p className="text-xs text-gray-400">
-              © 2026 OMOTEC Management System. All rights reserved.
+              © 2026 Resource Management Portal. All rights reserved.
             </p>
           </div>
         </div>

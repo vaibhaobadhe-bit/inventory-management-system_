@@ -141,10 +141,10 @@ export default function DashboardShell({ role = "Manager", onLogout = () => {} }
         <div className="px-5 pt-6 pb-5 border-b border-slate-800">
           <h2 className="flex items-center gap-2 font-bold text-white tracking-tight"
               style={{ fontSize: 20 }}>
-            <span>⚙️</span> OMOTEC
+            <span>⚙️</span> Resource Portal
           </h2>
           <p className="mt-1.5" style={{ fontSize: 12, color: "rgba(148,163,184,0.85)" }}>
-            Enterprise Resource Portal
+            Resource Management Portal
           </p>
           <span className="inline-block mt-2 text-indigo-400 bg-indigo-950/50 border border-indigo-900/50 rounded px-2 py-0.5 font-bold uppercase tracking-wider"
                 style={{ fontSize: 10 }}>
@@ -315,7 +315,7 @@ export default function DashboardShell({ role = "Manager", onLogout = () => {} }
 
         {/* ── Footer ── */}
         <footer className="py-4 text-center text-[11px] text-slate-400 border-t border-slate-100 bg-white">
-          © 2026 OMOTEC Management System • All Rights Reserved
+          © 2026 Resource Management Portal • All Rights Reserved
         </footer>
       </div>
     </div>
