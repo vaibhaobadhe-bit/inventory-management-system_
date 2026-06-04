@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* THEME SYSTEM STYLES */
+:root {
+  --bg-primary: #f8fafc; /* slate-50 */
+  --bg-card: #ffffff;
+  --bg-sidebar: #0f172a; /* slate-900 */
+  --bg-header: #ffffff;
+  --text-primary: #1e293b; /* slate-800 */
+  --text-muted: #64748b; /* slate-500 */
+  --border-color: #e2e8f0; /* slate-200 */
+  --border-dark: #cbd5e1; /* slate-300 */
+  --bg-row-hover: rgba(241, 245, 249, 0.5);
+  --input-bg: #ffffff;
+}
+
+html.dark {
+  --bg-primary: #0f172a; /* slate-900 */
+  --bg-card: #1e293b; /* slate-800 */
+  --bg-sidebar: #020617; /* slate-950 */
+  --bg-header: #1e293b; /* slate-800 */
+  --text-primary: #f8fafc; /* slate-50 */
+  --text-muted: #94a3b8; /* slate-400 */
+  --border-color: #334155; /* slate-700 */
+  --border-dark: #475569; /* slate-600 */
+  --bg-row-hover: rgba(51, 65, 85, 0.4);
+  --input-bg: #0f172a; /* slate-900 */
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    @apply antialiased;
+  }
+
+  /* Inputs, Selects, Textareas - auto adjust for light / dark */
+  input[type="text"],
+  input[type="number"],
+  input[type="password"],
+  input[type="email"],
+  input[type="date"],
+  select,
+  textarea {
+    background-color: var(--input-bg) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+    @apply border rounded-lg text-xs transition duration-150 p-2 outline-none w-full shadow-sm;
+    @apply focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 focus:shadow-sm;
+  }
+
+  /* Form Labels */
+  label {
+    color: var(--text-muted) !important;
+    @apply block text-[10px] font-bold uppercase tracking-wider mb-1;
+  }
+
+  /* Buttons hover transitions */
+  button {
+    @apply transition-all duration-150 active:scale-[0.98] select-none;
+  }
+
+  /* Table styling overrides */
+  table {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+    @apply w-full border-collapse text-left text-xs rounded-xl overflow-hidden border;
+  }
+
+  thead {
+    background-color: var(--bg-primary) !important;
+    border-color: var(--border-color) !important;
+    @apply border-b text-slate-500 uppercase tracking-wider font-semibold text-[10px];
+  }
+
+  html.dark thead {
+    background-color: rgba(15, 23, 42, 0.6) !important;
+  }
+
+  th {
+    color: var(--text-primary) !important;
+    @apply p-3 font-semibold border-none !important;
+  }
+
+  tr {
+    border-color: var(--border-color) !important;
+    @apply border-b last:border-b-0 transition;
+  }
+
+  tr:hover {
+    background-color: var(--bg-row-hover) !important;
+  }
+
+  td {
+    color: var(--text-primary) !important;
+    @apply p-3 align-middle border-none !important;
+  }
+}
+
+@layer components {
+  /* Cards default & premium - adapts dynamically */
+  .card-premium {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+    @apply p-5 rounded-2xl border shadow-sm hover:shadow transition duration-200;
+  }
+
+  /* Generic grid layouts / headers auto override */
+  html.dark .bg-white {
+    background-color: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+  }
+
+  html.dark .bg-slate-50,
+  html.dark .bg-gray-50,
+  html.dark .bg-gray-100 {
+    background-color: var(--bg-primary) !important;
+  }
+
+  html.dark .border-gray-100,
+  html.dark .border-slate-100,
+  html.dark .border-gray-200,
+  html.dark .border-slate-200,
+  html.dark .border-gray-300,
+  html.dark .border-gray-150 {
+    border-color: var(--border-color) !important;
+  }
+
+  html.dark .text-gray-800,
+  html.dark .text-slate-800,
+  html.dark .text-gray-900,
+  html.dark .text-slate-900 {
+    color: var(--text-primary) !important;
+  }
+
+  html.dark .text-gray-500,
+  html.dark .text-slate-500,
+  html.dark .text-gray-400,
+  html.dark .text-slate-400 {
+    color: var(--text-muted) !important;
+  }
+
+  html.dark .bg-slate-100 {
+    background-color: var(--bg-card) !important;
+  }
+
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg text-xs transition-all shadow-sm hover:shadow active:bg-indigo-800 flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    background-color: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+    @apply border font-bold py-2 px-4 rounded-lg text-xs transition-all shadow-sm flex items-center justify-center gap-2;
+  }
+
+  html.dark .btn-secondary:hover {
+    background-color: var(--bg-primary) !important;
+  }
+
+  .btn-danger {
+    @apply bg-rose-600 hover:bg-rose-700 text-white font-bold py-2 px-4 rounded-lg text-xs transition-all shadow-sm hover:shadow active:bg-rose-800 flex items-center justify-center gap-2;
+  }
+
+  .btn-success {
+    @apply bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-lg text-xs transition-all shadow-sm hover:shadow active:bg-emerald-800 flex items-center justify-center gap-2;
+  }
+
+  .btn-warning {
+    @apply bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded-lg text-xs transition-all shadow-sm hover:shadow active:bg-amber-700 flex items-center justify-center gap-2;
+  }
+}
