@@ -1,0 +1,13 @@
+package com.omotec.management;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+@Component
+public class StartupCheck implements CommandLineRunner {
+
+    @Override
+    public void run(String... args) {
+        System.out.println(">>> STARTUP CHECK LOADED <<<");
+    }
+}
